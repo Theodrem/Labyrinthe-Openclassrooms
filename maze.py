@@ -4,15 +4,13 @@ import random
 from config import *
 
 
-class Labyrinthe:
+class Maze:
     def __init__(self, fichier):
         self.structure = []
         self.fichier = fichier
         self.object = 0
 
     def build(self):
-        print("Remplissage du labyrinthe....")
-
         for filename in os.listdir("cartes"):
             if filename.endswith(".txt"):
                 path = os.path.join("cartes", filename)
@@ -43,5 +41,5 @@ class Labyrinthe:
             randomX = random.randint(1, 10)
             randomY = random.randint(1, 10)
             if self.structure[randomX][randomY] == "O":
-                self.structure[randomX][randomY] = objects[number_objects]
+                self.structure[randomX][randomY] = OBJECTS[number_objects]
                 number_objects += 1
