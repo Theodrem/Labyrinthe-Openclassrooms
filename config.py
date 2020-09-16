@@ -1,31 +1,32 @@
 # coding: utf8
 
 """
-controle perso
+player controls
 """
 
-right = "d"
-left = "g"
-high = "h"
-low = "b"
-inventoryButton = "i"
+RIGHT = "d"
+LEFT = "g"
+HIGH = "h"
+LOW = "b"
+INVENTORY_BUTTON = "i"
 
 """
 message
 """
 
-wall_message = "Attention au mur!"
-guardians_sleeping = "Bravo! Vous avez endormi le garde. Courez vers la sortie pour gagner!"
+WALL_MESSAGE = "Attention au mur!"
+SLEEP = "Bravo! Vous avez endormi le garde. Courez vers la sortie pour gagner!"
 
-guardian_loose = "Perdu! Vous n'avez pas ramassé tout les objets"
-winner = "Bravo! Vous avez terminé le labyrinthe."
+LOOSE = "Perdu! Vous n'avez pas ramassé tout les objets"
+WINNER = "Bravo! Vous avez terminé le labyrinthe."
+
 
 """
 Sprites and maze properties
 """
-wall = "O"
-way = " "
-mcgyver = "X"
-objects = "A", "B", "C", "D", "E"
-guardian = "G"
-exit = "U"
+WALL = "O"
+WAY = " "
+MCGIVER = "X"
+OBJECTS = "A", "B", "C", "D", "E"
+GUARD = "G"
+EXIT = "U"
