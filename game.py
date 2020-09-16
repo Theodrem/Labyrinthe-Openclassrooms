@@ -1,7 +1,7 @@
 # coding: utf8
-from personnage import Perso
+from player import Player
 from config import *
-from labyrinthe import Labyrinthe
+from maze import Maze
 
 
 class GameStart:
@@ -9,34 +9,34 @@ class GameStart:
         self.lab1 = 0
 
     def jeu(self):
-        maze1 = Labyrinthe("prison.txt")
+        maze1 = Maze("prison.txt")
         maze1.build()
         maze1.display()
-        perso1 = Perso(maze1)
+        player1 = Player(maze1)
         continue_game = True
 
         while continue_game:
             touch = input()
 
-            if touch == low:
-                perso1.move(low)
+            if touch == LOW:
+                player1.move(LOW)
 
-            elif touch == (high):
-                perso1.move(high)
+            elif touch == (HIGH):
+                player1.move(HIGH)
 
-            elif touch == (right):
-                perso1.move(right)
+            elif touch == (RIGHT):
+                player1.move(RIGHT)
 
-            elif touch == (left):
-                perso1.move(left)
+            elif touch == (LEFT):
+                player1.move(LEFT)
 
-            elif touch == (inventoryButton):
-                perso1.move(inventoryButton)
+            elif touch == (INVENTORY_BUTTON):
+                player1.move(INVENTORY_BUTTON)
 
             else:
                 pass
 
-            if perso1.win == False:
+            if player1.win == True:
                 continue_game = False
 
             maze1.display()
