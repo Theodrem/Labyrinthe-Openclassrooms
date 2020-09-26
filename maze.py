@@ -5,15 +5,16 @@ from config import *
 
 
 class Maze:
-    def __init__(self, fichier):
+    def __init__(self):
         self.structure = []
-        self.fichier = fichier
+        self.x = 0
+        self.y = 0
         self.object = 0
 
     def build(self):
-        for filename in os.listdir("cartes"):
+        for filename in os.listdir(DIRECTORY_MAP):
             if filename.endswith(".txt"):
-                path = os.path.join("cartes", filename)
+                path = os.path.join(DIRECTORY_MAP, filename)
                 with open(path, "r") as file:
                     content = file.readlines()
                     maps = []
@@ -37,9 +38,9 @@ class Maze:
 
     def object_placing(self):
         number_objects = 0
-        while number_objects < 5:
+        while number_objects < 3:
             randomX = random.randint(1, 10)
             randomY = random.randint(1, 10)
-            if self.structure[randomX][randomY] == "O":
+            if self.structure[randomX][randomY] == PATH:
                 self.structure[randomX][randomY] = OBJECTS[number_objects]
                 number_objects += 1
