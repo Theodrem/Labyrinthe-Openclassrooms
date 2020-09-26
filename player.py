@@ -10,26 +10,26 @@ class Player:
         self.direction = RIGHT
         self.maze = maze
         self.win = False
+        self.lose = False
         self.objects = OBJECTS
         self.inventory = []
 
     def move(self, direction):
-        lab = Maze("prison.txt")
-        if direction == (LOW):
+        if direction == (DOWN):
             if self.maze.structure[self.x + 1][self.y] == WALL:
                 print(WALL_MESSAGE)
             elif self.maze.structure[self.x + 1][self.y] != WALL:
-                self.maze.structure[self.x][self.y] = WAY
+                self.maze.structure[self.x][self.y] = PATH
                 self.x += 1
                 self.get_objects()
                 self.win_conditon()
                 self.maze.structure[self.x][self.y] = MCGIVER
 
-        elif direction == (HIGH):
+        elif direction == (UP):
             if self.maze.structure[self.x - 1][self.y] == WALL:
                 print(WALL_MESSAGE)
             elif self.maze.structure[self.x - 1][self.y] != WALL:
-                self.maze.structure[self.x][self.y] = WAY
+                self.maze.structure[self.x][self.y] = PATH
                 self.x -= 1
                 self.get_objects()
                 self.win_conditon()
@@ -39,7 +39,7 @@ class Player:
             if self.maze.structure[self.x][self.y + 1] == WALL:
                 print(WALL_MESSAGE)
             elif self.maze.structure[self.x][self.y + 1] != WALL:
-                self.maze.structure[self.x][self.y] = WAY
+                self.maze.structure[self.x][self.y] = PATH
                 self.y += 1
                 self.get_objects()
                 self.win_conditon()
@@ -49,7 +49,7 @@ class Player:
             if self.maze.structure[self.x][self.y - 1] == WALL:
                 print(WALL_MESSAGE)
             elif self.maze.structure[self.x][self.y - 1] != WALL:
-                self.maze.structure[self.x][self.y] = WAY
+                self.maze.structure[self.x][self.y] = PATH
                 self.y -= 1
                 self.get_objects()
                 self.win_conditon()
@@ -64,13 +64,13 @@ class Player:
 
     def win_conditon(self):
         if self.maze.structure[self.x][self.y] == (GUARD):
-            if len(self.inventory) == 5:
-                print(SLEEP)
+            if len(self.inventory) == 3:
+                self.maze.structure[self.x][self.y] = PATH
             else:
-                print(LOOSE)
-                self.win = True
+                #lose
+                self.lose = True
 
-        if self.maze.structure[self.x][self.y] == (exit):
+        if self.maze.structure[self.x][self.y] == (EXIT):
             if GUARD not in self.maze.structure:
                 print(WINNER)
                 self.win = True
