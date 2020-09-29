@@ -49,6 +49,24 @@ HEIGHT_WINDOWS = 675
 """
 image pygame
 """
+HOMEPAGE = pygame.image.load("assets/fond.jpg")
+
+
+HOMEPAGE_BANNER = pygame.image.load("assets/scientist.png")
+HOMEPAGE_BANNER = pygame.transform.scale(HOMEPAGE_BANNER, (300, 300))
+
+HOMEPAGE_BUTTON = pygame.image.load("assets/button.png")
+HOMEPAGE_BUTTON = pygame.transform.scale(HOMEPAGE_BUTTON, (370, 150))
+
+GAME_OVER_IMAGE = pygame.image.load("assets/game_over.png")
+GAME_OVER_IMAGE = pygame.transform.scale(GAME_OVER_IMAGE, (150, 150))
+
+WIN_IMAGE = pygame.image.load("assets/win.png")
+WIN_IMAGE = pygame.transform.scale(WIN_IMAGE, (150, 150))
+
+WELCOME_IMAGE = pygame.image.load("assets/welcome.png")
+WELCOME_IMAGE = pygame.transform.scale(WELCOME_IMAGE, (150, 150))
+
 
 WALL_IMAGE = pygame.image.load("assets/mur.png")
 WALL_IMAGE = pygame.transform.scale(WALL_IMAGE, (45, 45))
