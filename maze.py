@@ -9,7 +9,6 @@ class Maze:
         self.structure = []
         self.x = 0
         self.y = 0
-        self.object = 0
 
     def build(self):
         for filename in os.listdir(DIRECTORY_MAP):
@@ -28,19 +27,11 @@ class Maze:
         self.structure = maps
         self.object_placing()
 
-    def display(self):
-        for row in self.structure:
-            for character in row:
-                if character != ("\n"):
-                    print(character, end="")
-                else:
-                    print()
-
     def object_placing(self):
         number_objects = 0
         while number_objects < 3:
-            randomX = random.randint(1, 10)
-            randomY = random.randint(1, 10)
-            if self.structure[randomX][randomY] == PATH:
-                self.structure[randomX][randomY] = OBJECTS[number_objects]
+            random_x = random.randint(1, 10)
+            random_y = random.randint(1, 10)
+            if self.structure[random_x][random_y] == PATH:
+                self.structure[random_x][random_y] = OBJECTS[number_objects]
                 number_objects += 1
