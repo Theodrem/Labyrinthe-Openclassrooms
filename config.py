@@ -16,15 +16,6 @@ file prison.txt properties
 """
 FILE_NAME = "prison.txt"
 DIRECTORY_MAP = "cartes"
-"""
-message
-"""
-
-WALL_MESSAGE = "Attention au mur!"
-SLEEP = "Bravo! Vous avez endormi le garde. Courez vers la sortie pour gagner!"
-
-LOOSE = "Perdu! Vous n'avez pas ramassé tout les objets"
-WINNER = "Bravo! Vous avez terminé le labyrinthe."
 
 """
 Sprites and maze properties back 
@@ -48,6 +39,7 @@ HEIGHT_WINDOWS = 675
 """
 image pygame
 """
+
 HOMEPAGE = pygame.image.load("assets/fond.jpg")
 
 HOMEPAGE_BANNER = pygame.image.load("assets/scientist.png")
@@ -89,39 +81,22 @@ FLASK_2 = pygame.transform.scale(FLASK_2, (45, 45))
 FLASK_3 = pygame.image.load("assets/flask3.png")
 FLASK_3 = pygame.transform.scale(FLASK_3, (45, 45))
 
-"""HOMEPAGE = pygame.image.load("assets/fond.jpg")
-
-
-HOMEPAGE_BANNER = "assets/scientist.png"
-HOMEPAGE_BUTTON = "assets/button.png"
-GAME_OVER_IMAGE = "assets/game_over.png"
-WIN_IMAGE = "assets/win.png"
-WELCOME_IMAGE = "assets/welcome.png"
-WALL_IMAGE = "assets/mur.png"
-PATH_IMAGE = "assets/fond.jpg"
-MCGIVER_IMAGE= "assets/scientist.png"
-GUARD_IMAGE = "assets/keeper.png"
-EXIT_IMAGE = "assets/exit.png"
-FLASK_1 = "assets/flask.png"
-FLASK_2 = "assets/flask2.png"
-FLASK_3 = "assets/flask3.png"
 """
-
+button properties
+"""
 BUTTON_X = 160
 BUTTON_Y = 470
 
-DICTIONNARY = {
-    WALL: WALL_IMAGE,
+
+DICTIONNARY_IMAGE = {
+    WALL:WALL_IMAGE,
     PATH: PATH_IMAGE,
     GUARD: GUARD_IMAGE,
     OBJECT_1: FLASK_1,
     OBJECT_2: FLASK_2,
-    OBJECT_3: FLASK_3,
+    OBJECT_3: FLASK_1,
     MCGIVER: MCGIVER_IMAGE,
     EXIT: EXIT_IMAGE
-}  # dictionnary with characters and images
+}
 
-"""
-pygame title
-"""
 TITLE = pygame.display.set_caption("Labyrinthe")
