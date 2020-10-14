@@ -3,6 +3,9 @@ from config import *
 
 
 class Player:
+    """
+    Attributes of the player, move, win conditions, lose conditions
+    """
     def __init__(self, maze):
         self.x = 1
         self.y = 1
@@ -10,24 +13,45 @@ class Player:
         self.win = False
         self.lose = False
         self.inventory = []
-        self.size_inventory = len(self.inventory)
 
     def spawn(self):
+        """
+        change position of the player at the start of the map
+        """
         self.change_position(MCGIVER)
 
     def attributes(self):
+        """
+        apply the player's functions
+        """
         self.get_objects()
         self.fight_guard()
         self.win_condition()
         self.change_position(MCGIVER)
 
     def get_position(self):
+        """
+        :return postion of the player
+        """
         return self.maze.structure[self.x][self.y]
 
     def change_position(self, character):
+        """
+        change position of the player
+        :param character
+        """
         self.maze.structure[self.x][self.y] = character
 
     def move(self, direction):
+        """
+        :param direction: (down, up, right, left)
+        if next position of the player isn't a wall,
+        change actual position player with a path,
+        verify fight with the guard,
+        verify win condition,
+        verify lose condition,
+        change next position with player,
+        """
         if direction == DOWN:
             if self.maze.structure[self.x + 1][self.y] != WALL:
                 self.change_position(PATH)
@@ -53,23 +77,36 @@ class Player:
                 self.attributes()
 
     def get_objects(self):
+        """
+        add object in the inventory
+        """
         if self.get_position() in OBJECTS:
             self.inventory.append(self.get_position())
 
     def fight_guard(self):
+        """
+        if the player has all the items in his inventory he kills the guard else he dies
+        """
         if self.get_position() == GUARD:
-            if self.size_inventory == 3:
+            if (len(self.inventory)) == 3:
                 self.change_position(PATH)
             else:
-                #lose
                 self.lose_condition()
 
     def win_condition(self):
+        """
+        if the player get at the exit and the guard is dead, the player wins the game,
+        empty inventory
+        """
         if self.get_position() == EXIT:
             if GUARD not in self.maze.structure:
                 self.win = True
                 self.inventory.clear()
 
     def lose_condition(self):
+        """
+        the player loses,
+        empty inventory
+        """
         self.lose = True
         self.inventory.clear()
