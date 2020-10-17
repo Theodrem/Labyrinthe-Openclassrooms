@@ -1,15 +1,21 @@
-# The Maze Project: The maze
+# The third Project : The maze
 
-<img src="assets\theotimp3.jpg" alt="Home page" width="250" height="500"/>
-Project name: The Maze
+<img src="assets\theotimp3.jpg" alt="Home page" width="340" height="500" margin-left="200"/>
 
+# Description:
+
+Maze is simply a maze game that is played with the directional keys.
+The player must collect all the items before meeting the guard or he will die.
+Then he will have to go to the exit to win.
 Project version: 1.0
 
-Project description: maze game played with directional keys
+# Technical tools:
 
-Executable: Labyrinthe-Openclassrooms\dist\main\maze.exe
+* Backend: Python 3
+* Frontend: Pygame
+* Executable :
 
-Manifestation: "theotimp3.jpg"
+# Local installation:
 
-Author name: Theotim Herin
+
 
