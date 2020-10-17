@@ -1,4 +1,3 @@
-# coding: utf8
 import os
 import random
 from config import *
@@ -8,6 +7,7 @@ class Maze:
     """
     construction of the maze and placement of the objects.
     """
+
     def __init__(self):
         self.structure = []
         self.x = 0
