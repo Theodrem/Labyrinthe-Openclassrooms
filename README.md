@@ -1,6 +1,6 @@
 # The third Project : The maze
 
-<img src="assets\theotimp3.jpg" alt="Home page" width="340" height="500" margin-left="200"/>
+<img src="assets\theotimp3.jpg" alt="Home page" width="400" height="500" margin-left="500"/>
 
 # Description:
 
@@ -13,9 +13,10 @@ Project version: 1.0
 
 * Backend: Python 3
 * Frontend: Pygame
-* Executable :
+* Executable : cx_freeze
 
 # Local installation:
-
+Download zip Labyrinthe-Theotim
+open C:\Users\UX430\Desktop\PROJET.PY\OPENCLASSROOM\P3\Labyrinthe-Theotim.zip\Labyrinthe-Openclassrooms\build\exe.win32-3.7\main.exe
 
 
