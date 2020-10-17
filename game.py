@@ -1,4 +1,3 @@
-# coding: utf8
 from player import Player
 from config import *
 from graphic import Graphic
