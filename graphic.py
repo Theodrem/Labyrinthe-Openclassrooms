@@ -1,6 +1,6 @@
-import pygame
 from config import *
 from maze import Maze
+import pygame
 
 
 class Graphic:
