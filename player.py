@@ -19,15 +19,6 @@ class Player:
         """
         self.change_position(MCGIVER)
 
-    def attributes(self):
-        """
-        apply the player's functions
-        """
-        self.get_objects()
-        self.fight_guard()
-        self.win_condition()
-        self.change_position(MCGIVER)
-
     def get_position(self):
         """
         :return postion of the player
@@ -40,40 +31,6 @@ class Player:
         :param character
         """
         self.maze.structure[self.x][self.y] = character
-
-    def move(self, direction):
-        """
-        :param direction: (down, up, right, left)
-        if next position of the player isn't a wall,
-        change actual position player with a path,
-        verify fight with the guard,
-        verify win condition,
-        verify lose condition,
-        change next position with player,
-        """
-        if direction == DOWN:
-            if self.maze.structure[self.x + 1][self.y] != WALL:
-                self.change_position(PATH)
-                self.x += 1
-                self.attributes()
-
-        elif direction == UP:
-            if self.maze.structure[self.x - 1][self.y] != WALL:
-                self.change_position(PATH)
-                self.x -= 1
-                self.attributes()
-
-        elif direction == RIGHT:
-            if self.maze.structure[self.x][self.y + 1] != WALL:
-                self.change_position(PATH)
-                self.y += 1
-                self.attributes()
-
-        elif direction == LEFT:
-            if self.maze.structure[self.x][self.y - 1] != WALL:
-                self.change_position(PATH)
-                self.y -= 1
-                self.attributes()
 
     def get_objects(self):
         """
@@ -109,3 +66,46 @@ class Player:
         """
         self.lose = True
         self.inventory.clear()
+
+    def attributes(self):
+        """
+        apply the player's functions
+        """
+        self.get_objects()
+        self.fight_guard()
+        self.win_condition()
+        self.change_position(MCGIVER)
+        
+    def move(self, direction):
+        """
+        :param direction: (down, up, right, left)
+        if next position of the player isn't a wall,
+        change actual position player with a path,
+        verify fight with the guard,
+        verify win condition,
+        verify lose condition,
+        change next position with player,
+        """
+        if direction == DOWN:
+            if self.maze.structure[self.x + 1][self.y] != WALL:
+                self.change_position(PATH)
+                self.x += 1
+                self.attributes()
+
+        elif direction == UP:
+            if self.maze.structure[self.x - 1][self.y] != WALL:
+                self.change_position(PATH)
+                self.x -= 1
+                self.attributes()
+
+        elif direction == RIGHT:
+            if self.maze.structure[self.x][self.y + 1] != WALL:
+                self.change_position(PATH)
+                self.y += 1
+                self.attributes()
+
+        elif direction == LEFT:
+            if self.maze.structure[self.x][self.y - 1] != WALL:
+                self.change_position(PATH)
+                self.y -= 1
+                self.attributes()
