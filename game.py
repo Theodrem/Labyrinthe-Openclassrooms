@@ -1,6 +1,5 @@
 from player import Player
-from config import *
-from graphic import Graphic
+from graphic import *
 
 
 class GameStart:
@@ -88,15 +87,5 @@ class GameStart:
                 self.playing()
             else:
                 self.not_playing()
-            self.graphic.flip()
+            flip()
             self.action()
-
-
-
-
-
-
-
-
-
-
