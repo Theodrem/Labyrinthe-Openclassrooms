@@ -3,6 +3,13 @@ from maze import Maze
 import pygame
 
 
+def flip():
+    """
+    refresh page
+    """
+    pygame.display.flip()
+
+
 class Graphic:
     """
     Graphic elements of the game with pygame,
@@ -20,7 +27,7 @@ class Graphic:
     def print(self, text, x, y):
         """
         display object counter
-
+        :param text: text
         :param x: position x
         :param y: position y
 
@@ -45,7 +52,7 @@ class Graphic:
         """
         for row in self.maze.structure:
             for character in row:
-                if character != ("\n"):
+                if character != "\n":
                     self.window.blit((DICTIONNARY_IMAGE[character]), (self.maze.x, self.maze.y))
                 self.maze.x += 45
             else:
@@ -55,9 +62,3 @@ class Graphic:
                 else:
                     self.maze.y = 0
                     self.maze.x = 0
-
-    def flip(self):
-        """
-        refresh page
-        """
-        pygame.display.flip()
