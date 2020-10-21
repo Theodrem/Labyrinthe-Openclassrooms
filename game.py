@@ -29,16 +29,10 @@ class GameStart:
         self.player.win = False
         self.player.lose = False
 
-    def playing(self):
+    def end(self):
         """
-        dysplay the maze,
-        respawn the player,
-        display the counter of inventory
         if the player wins or loses the game is restarted, and display on home page won image or game over image
         """
-        self.graphic.display_maze()
-        self.player.spawn()
-        self.graphic.print(len(self.player.inventory), 0, 0)
         if self.player.win:
             self.start()
             self.graphic.homepage(WIN_IMAGE)
@@ -46,6 +40,18 @@ class GameStart:
         elif self.player.lose:
             self.start()
             self.graphic.homepage(GAME_OVER_IMAGE)
+
+    def playing(self):
+        """
+        dysplay the maze,
+        respawn the player,
+        display the counter of inventory
+        conditions de la fin of the game
+        """
+        self.graphic.display_maze()
+        self.player.change_position(MCGIVER)
+        self.graphic.print(len(self.player.inventory), 0, 0)
+        self.end()
 
     def action(self):
         """
