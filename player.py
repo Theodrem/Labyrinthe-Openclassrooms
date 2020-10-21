@@ -13,12 +13,6 @@ class Player:
         self.lose = False
         self.inventory = []
 
-    def spawn(self):
-        """
-        change position of the player at the start of the map
-        """
-        self.change_position(MCGIVER)
-
     def get_position(self):
         """
         :return postion of the player
