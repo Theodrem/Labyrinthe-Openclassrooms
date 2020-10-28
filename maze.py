@@ -41,7 +41,7 @@ class Maze:
         """
         number_objects = 0
         while number_objects < 3:
-            random_x = random.randint(1, 10)
+            random_x = random.randint(2, 10)
             random_y = random.randint(1, 10)
             if self.structure[random_x][random_y] == PATH:
                 self.structure[random_x][random_y] = OBJECTS[number_objects]
