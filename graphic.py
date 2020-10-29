@@ -54,11 +54,11 @@ class Graphic:
             for character in row:
                 if character != "\n":
                     self.window.blit((DICTIONNARY_IMAGE[character]), (self.maze.x, self.maze.y))
-                self.maze.x += 45
+                self.maze.x += SIZE_SPRITE
             else:
                 if self.maze.y <= HEIGHT_WINDOWS:
                     self.maze.x = 0
-                    self.maze.y += 45
+                    self.maze.y += SIZE_SPRITE
                 else:
                     self.maze.y = 0
                     self.maze.x = 0
