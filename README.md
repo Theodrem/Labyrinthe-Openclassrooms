@@ -19,7 +19,7 @@ Project version: 1.0
 - Download Labyrinthe-Theotim <br>
 - Install all packages in requirements.txt <br>
 - Input in terminal: setup.py build <br>
-- Add the cartes and assets files in build file
+- Add the cartes and assets files in build file <br>
 - start main.exe
 
 
