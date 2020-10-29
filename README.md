@@ -16,7 +16,7 @@ Project version: 1.0
 * Executable : cx_freeze
 
 # Local installation:
-Download zip Labyrinthe-Theotim <br>
-open C:\Users\UX430\Desktop\PROJET.PY\OPENCLASSROOM\P3\Labyrinthe-Theotim.zip\Labyrinthe-Openclassrooms\build\exe.win32-3.7\main.exe
+Download Labyrinthe-Theotim <br>
+
 
 
