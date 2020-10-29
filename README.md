@@ -16,7 +16,12 @@ Project version: 1.0
 * Executable : cx_freeze
 
 # Local installation:
-Download Labyrinthe-Theotim <br>
+- Download Labyrinthe-Theotim <br>
+- Install all packages in requirements.txt <br>
+- Input in terminal: setup.py build <br>
+- In build, start main.exe
+
+
 
 
 
