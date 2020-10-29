@@ -42,8 +42,8 @@ class Graphic:
         home page display, play button, welcome_image or win_image or game_over image
         """
         self.window.blit(HOMEPAGE, (0, 0))
-        self.window.blit(HOMEPAGE_BANNER, (200, 200))
-        self.window.blit(image, (280, 50))
+        self.window.blit(HOMEPAGE_BANNER, (160, 150))
+        self.window.blit(image, (240, 5))
         self.window.blit(HOMEPAGE_BUTTON, self.play_button_rect)
 
     def display_maze(self):
